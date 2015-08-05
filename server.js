@@ -83,7 +83,7 @@ var verb = new Verb();
   //those messages will be the return value of this function
 }*/
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   res.sendFile('index.html');
 });//there are diff http request that can be made like get and post amongst others
 //get - when someone comes to your door 3000 and requests something, we give back something which is 'hello world!' here
@@ -95,7 +95,7 @@ app.get('/adjective', function(req, res) {
   res.json(getRandomWord(adjective));
 });
 
-app.post('/adjective', function(req, res){
+app.post('/adjective', function(req, res) {
   console.log(req.body);
   res.json(postRandomWord(req.body.word, adjective));
 });
@@ -104,7 +104,7 @@ app.get('/verb', function(req, res) {
   res.json(getRandomWord(verb));
 });
 
-app.post('/verb', function(req, res){
+app.post('/verb', function(req, res) {
   console.log(req.body);
   res.json(postRandomWord(req.body.word, verb));
 });
@@ -113,12 +113,11 @@ app.get('/noun', function(req, res) {
   res.json(getRandomWord(noun));
 });
 
-app.post('/noun', function(req, res){
+app.post('/noun', function(req, res) {
   console.log(req.body);
   res.json(postRandomWord(req.body.word, noun));
 });
 
-
-app.listen(port, function(){ //when u want your server to start working you need your method app to start listening
+app.listen(port, function() { //when u want your server to start working you need your method app to start listening
   console.log('server started on port ' + port);//callback function
 });
